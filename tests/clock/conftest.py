@@ -6,10 +6,6 @@ import logging
 from tests.clock.test_clock import ClockConsts, ClockUtils
 
 
-def pytest_addoption(parser):
-    parser.addoption("--ntp_server", action="store", default=None, required=False, help="IP of NTP server to use")
-
-
 @pytest.fixture(scope='module', autouse=True)
 def ntp_server(request, duthosts, rand_one_dut_hostname):
     """

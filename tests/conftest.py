@@ -255,6 +255,12 @@ def pytest_addoption(parser):
     #################################
     parser.addoption("--run-stress-tests", action="store_true", default=False, help="Run only tests stress tests")
 
+    ############################
+    # clock options            #
+    ############################
+    parser.addoption("--ntp_server", action="store", default=None, required=False, help="IP of NTP server to use")
+
+
 
 def pytest_configure(config):
     if config.getoption("enable_macsec"):
